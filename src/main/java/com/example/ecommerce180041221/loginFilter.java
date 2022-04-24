@@ -1,6 +1,5 @@
 package com.example.ecommerce180041221;
 
-
 import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServletRequest;
@@ -8,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "LoginFilter")
+@WebFilter(filterName = "loginFilter")
 public class loginFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
     }
@@ -27,7 +26,7 @@ public class loginFilter implements Filter {
 
         if(session == null)
         {
-            request.getRequestDispatcher("loginPage.jsp").forward(request,response);
+            request.getRequestDispatcher("login.jsp").forward(request,response);
         }
         else
         {
@@ -37,4 +36,3 @@ public class loginFilter implements Filter {
 
     }
 }
-

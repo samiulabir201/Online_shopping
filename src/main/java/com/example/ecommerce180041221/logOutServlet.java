@@ -6,9 +6,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(name = "logOutServlet", value = "/logOutServlet")
-public class logOutServlet implements log {
+public class logOutServlet extends HttpServlet {
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         session.invalidate();
         response.sendRedirect("login.jsp");
@@ -19,4 +19,3 @@ public class logOutServlet implements log {
 
     }
 }
-

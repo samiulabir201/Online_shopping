@@ -72,7 +72,7 @@ public class ModifyCartServlet extends HttpServlet {
             System.out.println(query);
             st.executeUpdate("UPDATE cart_list SET quantity = quantity" + operation + "1 where user_emailid='" + emailid + "' and id=" + id);
 
-            st.executeUpdate("UPDATE product_list SET quantity = quantity " + operation1 + "1 where id=" + id);
+            st.executeUpdate("UPDATE product SET quantity = quantity " + operation1 + "1 where id=" + id);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -98,7 +98,7 @@ public class ModifyCartServlet extends HttpServlet {
                     currentQuantity = rs.getInt("quantity");
                 }
 
-                st.executeUpdate("UPDATE product_list SET quantity = quantity + " + currentQuantity + " where id=" + id);
+                st.executeUpdate("UPDATE product SET quantity = quantity + " + currentQuantity + " where id=" + id);
                 st.executeUpdate("DELETE FROM cart_list where user_emailid='" + emailid + "' and id=" + id);
             }
             else

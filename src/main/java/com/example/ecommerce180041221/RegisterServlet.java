@@ -1,20 +1,15 @@
 package com.example.ecommerce180041221;
 
 import com.example.ecommerce180041221.model.Cart;
-import com.example.ecommerce180041221.model.Product;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
 
-@WebServlet(name = "RegistrationServlet", value = "/RegistrationServlet")
+@WebServlet(name = "RegisterServlet", value = "/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -57,7 +52,7 @@ public class RegisterServlet extends HttpServlet {
         else
         {
             request.setAttribute("error","Password and Repassword Must Be Same");
-            request.getRequestDispatcher("registrationPage.jsp").forward(request,response);
+            request.getRequestDispatcher("registration.jsp").forward(request,response);
         }
     }
 }
