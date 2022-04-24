@@ -11,26 +11,26 @@
     <title>Registration</title>
 </head>
 <body>
-<form method="post" action="registrationServlet">
+<form method="post" action="RegisterServlet">
 
     <div>
         <label class="form-label">Your Name</label>
-        <input type="text" name="username-registration"/>
+        <input type="text" name="username"/>
     </div>
 
     <div>
         <label class="form-label">Your Email</label>
-        <input type="email" name="email-registration"/>
+        <input type="email" name="email"/>
     </div>
 
     <div>
         <label class="form-label">Password</label>
-        <input type="password" name="password-registration"/>
+        <input type="password" name="password"/>
     </div>
 
     <div>
         <label class="form-label">Repeat your password</label>
-        <input type="password" name="re-password"/>
+        <input type="password" name="repassword"/>
     </div>
 
     <div>
@@ -38,13 +38,10 @@
             Register
         </button>
     </div>
-    <p>Have already an account? <a href="loginPage.jsp" ><u>Login here</u></a></p>
+    <p>Have already an account? <a href="login.jsp"><u>Login here</u></a></p>
 
-    <p><%=request.getAttribute("alerting")==null ? "" : request.getAttribute("alerting")%></p>
-
-
-
-
-
+    <p><%=request.getAttribute("alerting") == null ? "" : request.getAttribute("alerting")%>
+    </p>
+</form>
 </body>
 </html>
